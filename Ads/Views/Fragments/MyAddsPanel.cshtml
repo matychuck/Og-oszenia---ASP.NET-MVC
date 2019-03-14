@@ -1,0 +1,22 @@
+﻿<div class="panel-heading">
+    <h3 class="panel-title">@Ads.Resources.Texts.MyAdds</h3>
+    <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
+</div>
+<div class="panel-body">
+    <ul>
+        @foreach (var item in ViewBag.myAds)
+        {
+            <ul id="ul_top_hypers">
+                <li onclick="location.href = '@(Url.Action("ShowAd", "Ads", new { id = item.AdID, media = item.MediaPath }))'" role="button">
+                    @item.Title
+                </li>
+                <li class="ads-user" onclick="location.href = '@(Url.Action("Edit", "Ads", new { id = item.AdID}))'" role="button">
+                    @Ads.Resources.Texts.Edit
+                </li>
+                <li class="ads-user" onclick="location.href = '@(Url.Action("DeleteMyAd", "Account", new { id = item.AdID}))'" role="button">
+                    @Ads.Resources.Texts.Delete
+                </li>
+            </ul>
+        }
+    </ul>
+</div>

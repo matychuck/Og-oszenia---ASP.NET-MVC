@@ -1,0 +1,36 @@
+﻿@model Ads.Models.Ad
+
+
+<h2>@ViewBag.Title</h2>
+
+
+<div>    
+    
+    <table class="table">
+        <tr >
+            <td class="multiline">@Html.DisplayFor(model => model.Content)</td>
+        </tr>
+        <tr>
+            <td>
+                @Ads.Resources.Texts.PageViews:
+            </td>
+            <td>@ViewBag.Counter</td>
+            <td>
+                @Ads.Resources.Texts.Category:
+            </td>
+            <td>@Html.DisplayFor(model => model.Category.Name)</td>
+            <td>@Ads.Resources.Texts.Autor: </td>
+            <td>
+                @Html.DisplayFor(model => model.User.Login)
+            </td>
+            <td>@Ads.Resources.Texts.DateOfCreation:</td>
+            <td>@Html.DisplayFor(model => model.DateOfInsert)</td>
+            <td>
+            <td>
+                @Html.DisplayFor(model => model.MediaPath)
+                <img src="/Images/Uploads/Ads0/Thumbs/@ViewBag.MediaPath" />
+            </td>
+        </tr>
+        </table>
+</div>
+

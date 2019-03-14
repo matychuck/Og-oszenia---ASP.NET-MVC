@@ -1,0 +1,129 @@
+﻿
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+@model Ads.Models.User
+@{
+    ViewBag.Title = @Ads.Resources.Texts.ProfileTitle;
+}
+
+<h2>@Ads.Resources.Texts.ProfileTitle</h2>
+
+<table>
+    <tr>
+        <center> <font size="12">@ViewBag.currentUser.Name @ViewBag.currentUser.Surname</font></center>
+    </tr>
+    <tr>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Login, @Ads.Resources.Texts.Mail, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 aa">
+                        @Html.DisplayFor(modelItem => modelItem.Login)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, @Ads.Resources.Texts.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 aa">
+                        @Html.DisplayFor(modelItem => modelItem.Name)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Surname, @Ads.Resources.Texts.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 aa">
+                        @Html.DisplayFor(modelItem => modelItem.Surname)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Phone, @Ads.Resources.Texts.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 aa">
+                        @Html.DisplayFor(modelItem => modelItem.Phone)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsActive, @Ads.Resources.Texts.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox aa">
+                            @Html.DisplayFor(modelItem => modelItem.IsActive)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MyPagination, @Ads.Resources.Texts.MyPagination, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 aa">
+                        @Html.DisplayFor(modelItem => modelItem.MyPagination)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input onclick="location.href = '@(Url.Action("Edit", "Account", new { id = ViewBag.currentUser.UserID }))'" value=@Ads.Resources.Texts.Edit class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </tr>
+</table>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            @{
+                HttpCookie theme = HttpContext.Current.Request.Cookies["Theme"];
+                if (theme != null)
+                {
+                    if (theme.Value == "default" || theme.Value == "dark" || theme.Value == "greenbrown")
+                    {
+                        <div class="panel panel-primary">
+                            @{ Html.RenderPartial("~/Views/Fragments/MyAddsPanel.cshtml"); }
+                        </div>
+
+                    }
+                    else if (theme.Value == "royal")
+                    {
+                        <div class="panel panel-primary-dark panel-square">
+                            @{ Html.RenderPartial("~/Views/Fragments/MyAddsPanel.cshtml"); }
+                        </div>
+                    }
+                }
+                else
+                {
+                    <img src="~/home_taxi.png" alt="placeholder 960" class="img-responsive" />
+                }
+            }
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+        var $this = $(this);
+        if (!$this.hasClass('panel-collapsed')) {
+            $this.parents('.panel').find('.panel-body').slideUp();
+            $this.addClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+
+        } else {
+            $this.parents('.panel').find('.panel-body').slideDown();
+            $this.removeClass('panel-collapsed');
+            $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+
+        }
+    })
+</script>

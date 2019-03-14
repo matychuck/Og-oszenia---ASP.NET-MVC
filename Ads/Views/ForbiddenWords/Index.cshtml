@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Ads.Models.ForbiddenWord>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.DictionaryOfForbWords;
+}
+
+<h2>Index</h2>
+@Html.Partial("_AdminTabs")
+<p>
+    <br />
+    @Html.ActionLink(@Ads.Resources.Texts.AddWordToDictionary, "Create")
+    <br />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Ads.Resources.Texts.Title
+        </th>
+        <th>
+            @Ads.Resources.Texts.Actions
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink(@Ads.Resources.Texts.Edit, "Edit", new { id = item.ForbiddenWordID }) |
+                @Html.ActionLink(@Ads.Resources.Texts.Delete, "Delete", new { id = item.ForbiddenWordID })
+            </td>
+        </tr>
+    }
+
+</table>

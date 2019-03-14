@@ -1,0 +1,55 @@
+﻿<nav class="menu-activea">
+    <h1>MENU</h1>
+    <ul>
+        <li>@Html.ActionLink(Ads.Resources.Texts.MainPage.ToUpper(), "Index", "Home", null, new { style = "", @class = "xd" })</li>
+        <li>@Html.ActionLink(Ads.Resources.Texts.Categories.ToUpper(), "Index", "Categories", null, new { style = "", @class = "xd" })</li>
+        <li>@Html.ActionLink(@Ads.Resources.Texts.CreateAd.ToUpper(), "ChooseCategory", "Ads", null, new { style = "", @class = "xd" })</li>
+        <li>@Html.ActionLink(@Ads.Resources.Texts.Ads.ToUpper(), "Index", "Ads", null, new { style = "", @class = "xd" })</li>
+        <li>
+            <p>
+                @Ads.Resources.Texts.Language.ToUpper()
+            </p>
+            <ul>
+                <li>@Html.ActionLink(Ads.Resources.Texts.LanguageEN.ToUpper(), "Change", "Home", new { LanguageAbbreviation = "en" }, new { style = "", @class = "xd" })</li>
+                <li>@Html.ActionLink(Ads.Resources.Texts.LanguagePL.ToUpper(), "Change", "Home", new { LanguageAbbreviation = "pl" }, new { style = "", @class = "xd" })</li>
+                <li>@Html.ActionLink(Ads.Resources.Texts.LanguageDE.ToUpper(), "Change", "Home", new { LanguageAbbreviation = "de" }, new { style = "", @class = "xd" })</li>
+            </ul>
+        </li>
+        <li>
+            <p>
+                @Ads.Resources.Texts.Theme.ToUpper()
+            </p>
+            <ul>
+                <li>@Html.ActionLink(Ads.Resources.Texts.Default.ToUpper(), "SetTheme", "Home", new { ThemeName = "default" }, new { style = "", @class = "xd" })</li>
+                <li>@Html.ActionLink(Ads.Resources.Texts.Dark.ToUpper(), "SetTheme", "Home", new { ThemeName = "dark" }, new { style = "", @class = "xd" })</li>
+                <li>@Html.ActionLink(Ads.Resources.Texts.Royal.ToUpper(), "SetTheme", "Home", new { ThemeName = "royal" }, new { style = "", @class = "xd" })</li>
+            </ul>
+        </li>
+        @if (Session["UserID"] == null)
+        {
+            <li>@Html.ActionLink(Ads.Resources.Texts.Login.ToUpper(), "Login", "Account", null, new { style = "", @class = "xd" })</li>
+            <li>@Html.ActionLink(Ads.Resources.Texts.Register.ToUpper(), "Register", "Account", null, new { style = "", @class = "xd" })</li>
+
+        }
+        else
+        {
+            <li>
+                <p>
+                    @Ads.Resources.Texts.ProfileTitle.ToUpper()
+                </p>
+                <ul>
+                    <li>
+                        <a class="xd" href="/Account/ViewMyProfile">@Ads.Resources.Texts.ProfileShow.ToUpper()</a>
+                    </li>
+                    <li>
+                        <a class="xd" href="/Account/ChangePassword">@Ads.Resources.Texts.ProfileChngPsswd.ToUpper()</a>
+                    </li>
+                    <li>
+                        <a class="xd" href="/Account/Logout">@Ads.Resources.Texts.Logout.ToUpper()</a>
+                    </li>
+                </ul>
+            </li>
+        }
+
+    </ul>
+</nav>

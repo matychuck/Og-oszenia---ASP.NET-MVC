@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Ads.Models.Category>
+
+
+
+<h2>@Ads.Resources.Texts.Categories: @Ads.Resources.Texts.Subcategory: @ViewBag.Title</h2>
+
+<p>
+    @if (Convert.ToBoolean(Session["Admin"]) == true)
+    {
+        @Html.ActionLink(@Ads.Resources.Texts.Create, "Create");
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Ads.Resources.Texts.Name
+        </th>
+        <th>
+            @Ads.Resources.Texts.ParentcategoryID
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr onclick="location.href = '@(Url.Action("ShowSubcategories", "Categories", new { id = item.CategoryID }))'" role="button">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentcategoryID)
+            </td>
+            <td>
+                @if (Convert.ToBoolean(Session["Admin"]) == true)
+                {
+                    @Html.ActionLink(@Ads.Resources.Texts.Edit + " | ", "Edit", new { id = item.CategoryID })
+                    @Html.ActionLink(@Ads.Resources.Texts.Details + " | ", "Details", new { id = item.CategoryID })
+                    @Html.ActionLink(@Ads.Resources.Texts.Delete, "Delete", new { id = item.CategoryID })
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+<h2>Ogłoszenia</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Ads.Resources.Texts.Title
+        </th>
+        <th>
+            @Ads.Resources.Texts.DateOfInsert
+        </th>
+        <th>
+            @Ads.Resources.Texts.Category
+        </th>
+    </tr>
+    @foreach (var item in ViewBag.AdsOfThisCategory)
+    {
+        <tr onclick="location.href = '@(Url.Action("ShowAd", "Ads", new { id = item.AdID }))'" role="button">
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.DateOfInsert
+
+            </td>
+            <td>
+                @item.Category.Name
+            </td>
+            <td>
+                @if (Convert.ToBoolean(Session["Admin"]) == true)
+                {
+                    @Html.ActionLink(@Ads.Resources.Texts.Edit + " | ", "Edit", "Edit", new { id = item.AdID });
+                    @Html.ActionLink(@Ads.Resources.Texts.Details + " | ", "Details", "Details", new { id = item.AdID });
+                    @Html.ActionLink(@Ads.Resources.Texts.Delete, "Delete", "Delete", new { id = item.AdID });
+                }
+            </td>
+        </tr>
+    }
+</table>

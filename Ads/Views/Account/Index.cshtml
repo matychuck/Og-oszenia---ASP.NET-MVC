@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Ads.Models.User>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.UsersList;
+}
+
+<h2>@Ads.Resources.Texts.Users</h2>
+
+@Html.Partial("_AdminTabs")
+<p>
+    @Html.ActionLink(@Ads.Resources.Texts.CreateNew, "Stworz konto")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th>
+            @Ads.Resources.Texts.FirstName
+        </th>
+        <th>
+            @Ads.Resources.Texts.Surname
+        </th>
+        <th>
+            @Ads.Resources.Texts.Phone
+        </th>
+        <th>
+            @Ads.Resources.Texts.Psswd
+        </th>
+        <th>
+            @Ads.Resources.Texts.IsActive
+        </th>
+        <th>
+            @Ads.Resources.Texts.IsAdmin
+        </th>
+        <th>
+            @Ads.Resources.Texts.MyPagination
+        </th>
+        <th>
+            @Ads.Resources.Texts.Actions
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MyPagination)
+            </td>
+            <td>
+                @Html.ActionLink(@Ads.Resources.Texts.Edit, "Edit", new { id = item.UserID }) |
+                @Html.ActionLink(@Ads.Resources.Texts.Details, "Details", new { id = item.UserID }) |
+                @Html.ActionLink(@Ads.Resources.Texts.Delete, "Delete", new { id = item.UserID })
+            </td>
+        </tr>
+    }
+
+</table>

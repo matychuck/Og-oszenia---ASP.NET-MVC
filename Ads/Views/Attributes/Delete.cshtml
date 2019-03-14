@@ -1,0 +1,45 @@
+﻿@model Ads.Models.Attribute
+
+
+<h3>@Ads.Resources.Texts.DeleteConfirmation?</h3>
+    <div>
+        <h4>@Ads.Resources.Texts.Attribute</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Ads.Resources.Texts.CategoryName
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cat.Name)
+            </dd>
+    
+            <dt>
+                @Ads.Resources.Texts.Type
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+    
+            <dt>
+                @Ads.Resources.Texts.Name
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value=@Ads.Resources.Texts.Delete class="btn btn-default" /> |
+                @Html.ActionLink(@Ads.Resources.Texts.BackToList, "Index")
+            </div>
+        }
+    </div>
+

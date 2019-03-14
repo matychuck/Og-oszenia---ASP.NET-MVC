@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Ads.Models.Category>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.Categories;
+}
+
+<h2>@ViewBag.Title</h2>
+@if (Convert.ToBoolean(Session["Admin"]) == true)
+{
+    @Html.Partial("_AdminTabs")
+}
+<p>
+    @if (Convert.ToBoolean(Session["Admin"]) == true)
+    {
+        @Html.ActionLink(@Ads.Resources.Texts.CreateNewCategory, "Create");
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Ads.Resources.Texts.Name
+        </th>
+        <th>
+            @Ads.Resources.Texts.ParentcategoryID
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr onclick="location.href = '@(Url.Action("ShowSubcategories", "Categories", new { id = item.CategoryID }))'" role="button">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentcategoryID)
+            </td>
+            <td>
+                @if (Convert.ToBoolean(Session["Admin"]) == true)
+                {
+                    @Html.ActionLink(@Ads.Resources.Texts.Edit + " | ", "Edit", new { id = item.CategoryID });
+                    @Html.ActionLink(@Ads.Resources.Texts.Details + " | ", "Details", new { id = item.CategoryID });
+                    @Html.ActionLink(@Ads.Resources.Texts.Delete, "Delete", new { id = item.CategoryID });
+                }
+            </td>
+        </tr>
+    }
+
+</table>

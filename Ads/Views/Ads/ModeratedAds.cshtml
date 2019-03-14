@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Ads.Models.Ad>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.ModerationMsg;
+}
+
+<h2>@Ads.Resources.Texts.ModerationList</h2>
+@if (Convert.ToBoolean(Session["Admin"]) == true)
+{@Html.Partial("_AdminTabs")
+}
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Ads.Resources.Texts.Title
+        </th>
+        <th>
+            @Ads.Resources.Texts.DateOfInsert
+        </th>
+        <th>
+            @Ads.Resources.Texts.CategoryName
+        </th>
+
+        <th>
+            @Ads.Resources.Texts.IsModerated
+        </th>
+        <th>
+            @Ads.Resources.Texts.Actions
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr onclick="location.href = '@(Url.Action("ShowAd", "Ads", new { id = item.AdID, media = item.MediaPath }))'" role="button">
+
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.DateOfInsert
+
+            </td>
+            <td>
+                @item.Category.Name
+            </td>
+            <td>
+                @item.IsModerated
+            </td>
+
+            <td>
+
+                @Html.ActionLink(@Ads.Resources.Texts.Moderate, "Moderate", new { id = item.AdID })
+
+            </td>
+        </tr>
+    }
+
+
+</table>
+
+@*////////*@

@@ -1,0 +1,41 @@
+﻿@model Ads.Models.AdminMessage
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.Delete;
+}
+
+<h2>@Ads.Resources.Texts.Delete</h2>
+
+<h3>@Ads.Resources.Texts.DeleteConfirmation</h3>
+<div>
+    <h4>@Ads.Resources.Texts.AdminMsg</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Ads.Resources.Texts.Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Ads.Resources.Texts.Content
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value=@Ads.Resources.Texts.Delete class="btn btn-default" /> |
+            @Html.ActionLink(@Ads.Resources.Texts.BackToList, "Index")
+        </div>
+    }
+</div>

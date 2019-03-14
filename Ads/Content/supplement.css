@@ -1,0 +1,15 @@
+﻿
+#google_translate_element {
+    position: absolute;
+    left: 5px;
+    z-index: 1;
+    margin: 0;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}

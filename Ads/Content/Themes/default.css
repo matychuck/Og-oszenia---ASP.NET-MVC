@@ -1,0 +1,14 @@
+﻿body {
+    color: #333;
+    background-color: #fff;
+}
+
+.navbar-inverse {
+    background-color: #16bf6a;
+    border-color: #b3fb08;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    background-color: #fff;
+}

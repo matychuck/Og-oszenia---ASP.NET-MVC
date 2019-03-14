@@ -1,0 +1,40 @@
+﻿body {
+    color: #ccc;
+    background-color: #111;
+}
+
+.navbar-inverse {
+    background-color: seagreen;
+    border-color: mediumseagreen;
+}
+
+.btn-success {
+    color: #ccc;
+    background-color: seagreen;
+    border-color: mediumseagreen;
+}
+
+    .btn-success:hover {
+        background-color: #16bf6a;
+    }
+
+.btn-default {
+    color: #ccc;
+    background-color: #777;
+    border-color: seagreen;
+}
+
+    .btn-default:hover {
+        background-color: seagreen;
+    }
+
+.pagination > li > a,
+.pagination > li > span {
+    background-color: #ccc;
+}
+
+.panel-primary > .panel-heading {
+    color: #ccc;
+    background-color: seagreen;
+    border-color: mediumseagreen;
+}

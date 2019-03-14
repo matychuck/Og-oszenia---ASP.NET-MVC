@@ -1,0 +1,132 @@
+﻿@{ ViewBag.Title = @Ads.Resources.Texts.HomePageTitle;
+}
+
+<div class="container-fluid no-padding">
+    <div class="row">
+        <div class="col-md-12">
+            @{
+                HttpCookie theme = HttpContext.Current.Request.Cookies["Theme"];
+                if (theme != null)
+                {
+                    if (theme.Value == "default" || theme.Value == "dark")
+                    {
+                        <img src="~/home_taxi.png" alt="placeholder 960" class="img-responsive" style="filter: brightness(85%)" />
+
+                    }
+                    else if (theme.Value == "royal")
+                    {
+                        <img src="~/home_taxi.png" alt="placeholder 960" class="img-responsive" style="filter: brightness(70%)" />
+                    }
+                }
+                else
+                {
+                    <img src="~/home_taxi.png" alt="placeholder 960" class="img-responsive" />
+                }
+            }
+            <div class="centered">
+                <span style="color: white; font-size:1.4vw;">
+                    <center>@Ads.Resources.Texts.HomePageMainText</center>
+                    <center>@Ads.Resources.Texts.HomePageMainText2</center>
+                </span>
+
+                <div class="navbar-collapse collapse">
+                    <div class="col-md-12">
+                        <form method="post" action="~/Ads/Filter">
+                            <span style="font-size:1vw; color:white">
+                                <center>@Ads.Resources.Texts.HomePageMainText3</center>
+                            </span>
+                            <div class="col-md-12 input-group">
+
+                                @using (Html.BeginForm())
+                                {
+                                    <center>
+                                        @Html.RadioButton("Option", "And") <span style="color:white">@Ads.Resources.Texts.And</span>
+                                        @Html.RadioButton("Option", "Or") <span style="color:white">@Ads.Resources.Texts.Or</span>
+                                        @Html.RadioButton("Option", "Not") <span style="color:white">@Ads.Resources.Texts.Not</span>
+                                    </center>
+                                    <div>
+                                        <input class="form-control" type="text" style="text-transform:uppercase" id="keyWord" name="keyWord" placeholder=@Ads.Resources.Texts.SearchBarHint>
+                                        <button class="btn btn-success" type="submit">@Ads.Resources.Texts.ButtonSearch!</button>
+                                    </div>
+                                }
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Ads.Resources.Texts.RealProperties</h2>
+        <p>
+            @Ads.Resources.Texts.RealPropertiesText.
+        </p>
+        <p><a class="btn btn-default" href="Categories/ShowSubcategories/1">@Ads.Resources.Texts.ButtonMore &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Ads.Resources.Texts.Automoto</h2>
+        <p>
+            @Ads.Resources.Texts.AutomotoText.
+        </p>
+        <p><a class="btn btn-default" href="/Categories/ShowSubcategories/2">@Ads.Resources.Texts.ButtonMore &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Ads.Resources.Texts.Jobs</h2>
+        <p>@Ads.Resources.Texts.JobsText.</p>
+        <p><a class="btn btn-default" href="/Categories/ShowSubcategories/4">@Ads.Resources.Texts.ButtonMore &raquo;</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Ads.Resources.Texts.SportsNHobby</h2>
+        <p>
+            @Ads.Resources.Texts.SportsNHobbyText.
+        </p>
+        <p><a class="btn btn-default" href="/Categories/ShowSubcategories/7">@Ads.Resources.Texts.ButtonMore &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Ads.Resources.Texts.Pets</h2>
+        <p>@Ads.Resources.Texts.PetsText</p>
+        <p><a class="btn btn-default" href="/Categories/ShowSubcategories/6">@Ads.Resources.Texts.ButtonMore &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Ads.Resources.Texts.Fashion</h2>
+        <p>@Ads.Resources.Texts.FashionText</p>
+        <p><a class="btn btn-default" href="/Categories/ShowSubcategories/8">@Ads.Resources.Texts.ButtonMore &raquo;</a></p>
+    </div>
+</div>
+@model IEnumerable<Ads.Models.AdminMessage>
+
+<h2>@Ads.Resources.Texts.AdminMsgsAll</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Ads.Resources.Texts.Title
+        </th>
+        <th>
+            @Ads.Resources.Texts.Content
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+        </tr>
+    }
+
+</table>

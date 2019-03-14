@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Ads.Models.AdminMessage>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.AdminMsgs;
+}
+
+<h2>@Ads.Resources.Texts.AdminMsgsAll</h2>
+
+@Html.Partial("_AdminTabs")
+
+<p>
+    @Html.ActionLink(Ads.Resources.Texts.AddNewMsg, "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Ads.Resources.Texts.Title
+        </th>
+        <th>
+            @Ads.Resources.Texts.Content
+        </th>
+        <th>
+            @Ads.Resources.Texts.Actions
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.ActionLink(@Ads.Resources.Texts.Edit, "Edit", new { id=item.AdminMessageID }) |
+            @Html.ActionLink(@Ads.Resources.Texts.Delete, "Delete", new { id=item.AdminMessageID })
+        </td>
+    </tr>
+}
+
+</table>

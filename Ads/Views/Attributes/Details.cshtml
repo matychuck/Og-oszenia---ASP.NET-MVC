@@ -1,0 +1,40 @@
+﻿@model Ads.Models.Attribute
+
+
+    <div>
+        <h4>@Ads.Resources.Texts.Attribute</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Ads.Resources.Texts.CategoryName
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cat.Name)
+            </dd>
+    
+            <dt>
+                @Ads.Resources.Texts.Type
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+    
+            <dt>
+                @Ads.Resources.Texts.Name
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+       
+            
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink(@Ads.Resources.Texts.Edit, "Edit", new { id = Model.AttributeID }) |
+        @Html.ActionLink(@Ads.Resources.Texts.BackToList, "Index")
+    </p>
+

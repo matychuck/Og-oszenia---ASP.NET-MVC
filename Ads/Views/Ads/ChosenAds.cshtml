@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Ads.Models.Ad>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.Ads;
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @if (Convert.ToBoolean(Session["Admin"]) == true)
+    {
+        @Html.ActionLink(@Ads.Resources.Texts.CreateNew, "Create");
+    }
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Ads.Resources.Texts.Title
+        </th>
+
+        <th>
+            @Ads.Resources.Texts.DateOfInsert
+        </th>
+        <th>
+            @Ads.Resources.Texts.CategoryName
+        </th>
+        <th>
+            @Ads.Resources.Texts.FileName
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr onclick="location.href = '@(Url.Action("ShowAd", "Ads", new { id = item.AdID }))'" role="button">
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfInsert)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @item.MediaPath
+                <img src="/Images/Uploads/Ads0/Thumbs/@item.MediaPath" />
+            </td>
+            <td>
+                @if (Convert.ToBoolean(Session["Admin"]) == true)
+                {
+                    @Html.ActionLink(@Ads.Resources.Texts.Edit + " |", "Edit", new { id = item.AdID });
+                    @Html.ActionLink(" " + @Ads.Resources.Texts.Details + " |", "Details", new { id = item.AdID });
+                    @Html.ActionLink(" " + @Ads.Resources.Texts.Delete, "Delete", new { id = item.AdID });
+                }
+            </td>
+        </tr>
+    }
+
+</table>

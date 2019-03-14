@@ -1,0 +1,39 @@
+﻿
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <ul id="myTab" class="nav nav-tabs">
+
+                <li><a href="#a" onclick="location.href='@Url.Action("Index", "Account")'" data-toggle="tab">@Ads.Resources.Texts.Users</a></li>
+                <li><a href="#b" onclick="location.href='@Url.Action("Index", "Categories")'" data-toggle="tab">@Ads.Resources.Texts.Categories</a></li>
+                <li><a href="#c" onclick="location.href='@Url.Action("Index", "Attributes")'" data-toggle="tab">@Ads.Resources.Texts.Attributes</a></li>
+                <li><a href="#d" onclick="location.href='@Url.Action("Index", "Ads")'" data-toggle="tab">@Ads.Resources.Texts.Ads</a></li>
+                <li><a href="#d" onclick="location.href='@Url.Action("ModeratedAds", "Ads")'" data-toggle="tab">@Ads.Resources.Texts.AdsSubForMod</a></li>
+                <li><a href="#e" onclick="location.href='@Url.Action("Index", "ForbiddenWords")'" data-toggle="tab">@Ads.Resources.Texts.DictionaryOfForbWords</a></li>
+                <li><a href="#f" onclick="location.href='@Url.Action("Index", "AdminMessages")'" data-toggle="tab">@Ads.Resources.Texts.AdminMsgs</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- /.container-fluid -->
+@*<div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.Label("Pokaz:")
+            <input type="button" value="Panel" onclick="location.href='@Url.Action("Index", "Admin")'" />
+            <input type="button" value="Uzytkownicy" onclick="location.href='@Url.Action("Users", "Admin")'" />
+            <input type="button" value="Kategorie" onclick="location.href='@Url.Action("Index", "Categories")'" />
+            <input type="button" value="Atrybuty" onclick="location.href='@Url.Action("Index", "Attributes")'" />
+            <input type="button" value="Ogloszenia" onclick="location.href='@Url.Action("Ads", "Admin")'" />
+            <input type="button" value="Slownik slow zakazanych" onclick="location.href='@Url.Action("ForbiddenWords", "Admin")'" />
+            <input type="button" value="Wiadomosci admina" onclick="location.href='@Url.Action("Messages", "Admin")'" />
+        </div>
+
+  </div>*@
+
+

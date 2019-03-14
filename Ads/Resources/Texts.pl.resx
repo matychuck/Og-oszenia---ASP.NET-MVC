@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutContent" xml:space="preserve">
+    <value>Tutaj znajdziesz dodatkowe informacje</value>
+  </data>
+  <data name="AboutMsg" xml:space="preserve">
+    <value>Strona opisu aplikacji</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Akcje</value>
+  </data>
+  <data name="Ad" xml:space="preserve">
+    <value>Ogłoszenie</value>
+  </data>
+  <data name="AddAd" xml:space="preserve">
+    <value>Dodaj ogłoszenie</value>
+  </data>
+  <data name="AddMsg" xml:space="preserve">
+    <value>Dodaj wiadmomość</value>
+  </data>
+  <data name="AddNewMsg" xml:space="preserve">
+    <value>Dodaj nowa wiadomosc</value>
+  </data>
+  <data name="AddWordToDictionary" xml:space="preserve">
+    <value>Dodaj nowy wyraz do słownika</value>
+  </data>
+  <data name="AdminMsg" xml:space="preserve">
+    <value>Wiadomość administratora</value>
+  </data>
+  <data name="AdminMsgs" xml:space="preserve">
+    <value>Wiadomości Admina</value>
+  </data>
+  <data name="AdminMsgsAll" xml:space="preserve">
+    <value>Wszyskie wiadomości administratora</value>
+  </data>
+  <data name="AdminPanel" xml:space="preserve">
+    <value>Panel administratora</value>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>Ogłoszenia</value>
+  </data>
+  <data name="AdsSubForMod" xml:space="preserve">
+    <value>Ogłoszenia zgłoszone do moderacji</value>
+  </data>
+  <data name="AdsTitle" xml:space="preserve">
+    <value>Serwis ogłoszeń</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>i</value>
+  </data>
+  <data name="Atributes" xml:space="preserve">
+    <value>Atrybuty</value>
+  </data>
+  <data name="Attribute" xml:space="preserve">
+    <value>Atrybut</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Atrybuty</value>
+  </data>
+  <data name="Automoto" xml:space="preserve">
+    <value>Auto-moto</value>
+  </data>
+  <data name="AutomotoText" xml:space="preserve">
+    <value>Szukasz nowego pojazdu? A może coś się zepsuło?</value>
+  </data>
+  <data name="Autor" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Cofnij</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Powrót do listy</value>
+  </data>
+  <data name="Blue" xml:space="preserve">
+    <value>Niebieski</value>
+  </data>
+  <data name="ButtonMore" xml:space="preserve">
+    <value>Więcej</value>
+  </data>
+  <data name="ButtonSearch" xml:space="preserve">
+    <value>Szukaj</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Kategorie</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategoria</value>
+  </data>
+  <data name="CategoryID" xml:space="preserve">
+    <value>ID kategorii</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Nazwa kategorii</value>
+  </data>
+  <data name="CharsRemaining" xml:space="preserve">
+    <value>500 znaków wymagane</value>
+  </data>
+  <data name="ChooseCategory" xml:space="preserve">
+    <value>Wybierz kategorię</value>
+  </data>
+  <data name="ClickToLogin" xml:space="preserve">
+    <value>Kliknij tutaj, żeby się zalogować</value>
+  </data>
+  <data name="ContactMsg" xml:space="preserve">
+    <value>Twoja strona kontaktowa.</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Zawartość</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Stwórz</value>
+  </data>
+  <data name="CreateAd" xml:space="preserve">
+    <value>Stwórz ogłoszenie</value>
+  </data>
+  <data name="CreateAdd" xml:space="preserve">
+    <value>Stwórz własne ogłoszenie</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Stwórz nowe</value>
+  </data>
+  <data name="CreateNewCategory" xml:space="preserve">
+    <value>Zdefiniuj nową kategorię</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Ciemny</value>
+  </data>
+  <data name="DateOfCreation" xml:space="preserve">
+    <value>Data utworzenia</value>
+  </data>
+  <data name="DateOfInsert" xml:space="preserve">
+    <value>Data dodania</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Fabryczny</value>
+  </data>
+  <data name="DefineNew" xml:space="preserve">
+    <value>Zdefiniuj nowe</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Czy jesteś pewny, że chcesz usunąć</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="DictionaryOfForbWords" xml:space="preserve">
+    <value>Słownik słów zakazanych</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="EditTheMsg" xml:space="preserve">
+    <value>Edytuj wiadomość</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>Wystąpił błąd podczas przetwarzania żądania</value>
+  </data>
+  <data name="Fashion" xml:space="preserve">
+    <value>Moda</value>
+  </data>
+  <data name="FashionText" xml:space="preserve">
+    <value>Chcesz wymienić ubrania, czy może podążasz za modą? Sprawdź oferty innych...</value>
+  </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>Pole jest wymagane</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Nazwa pliku</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtr</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="Footer" xml:space="preserve">
+    <value>moja aplikacja platformy ASP.NET</value>
+  </data>
+  <data name="ForbiddenError" xml:space="preserve">
+    <value>Ogłoszenie nie zostało dodane!</value>
+  </data>
+  <data name="ForbiddenWord" xml:space="preserve">
+    <value>Zakazany Wyraz</value>
+  </data>
+  <data name="ForbiddenWordAd" xml:space="preserve">
+    <value>W treści zostało użyte zakazane słowo!</value>
+  </data>
+  <data name="ForgetPsswd" xml:space="preserve">
+    <value>Zapomniałeś hasła</value>
+  </data>
+  <data name="HomePageMainText" xml:space="preserve">
+    <value>Zamieść ogłoszenie w największym serwisie w Polsce</value>
+  </data>
+  <data name="HomePageMainText2" xml:space="preserve">
+    <value>Pokaż się światu</value>
+  </data>
+  <data name="HomePageMainText3" xml:space="preserve">
+    <value>Użyj okrągłych przycisków do wyszukiwania</value>
+  </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Jest aktywny</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>Jest administratorem</value>
+  </data>
+  <data name="IsModerated" xml:space="preserve">
+    <value>Jest w moderacji</value>
+  </data>
+  <data name="Jobs" xml:space="preserve">
+    <value>Prace</value>
+  </data>
+  <data name="JobsText" xml:space="preserve">
+    <value>Tutaj możesz łatwo znaleźć pracę lub szukać nowych pracowników.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Język</value>
+  </data>
+  <data name="LanguageDE" xml:space="preserve">
+    <value>Niemiecki</value>
+  </data>
+  <data name="LanguageEN" xml:space="preserve">
+    <value>Angielski</value>
+  </data>
+  <data name="LanguagePL" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="Logged" xml:space="preserve">
+    <value>Zalogowany</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Zaloguj</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="MainPage" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="Marketing" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="MediaPath" xml:space="preserve">
+    <value>Ścieżka multimediów</value>
+  </data>
+  <data name="Moderate" xml:space="preserve">
+    <value>Modyfikuj</value>
+  </data>
+  <data name="ModerationConfirmation" xml:space="preserve">
+    <value>Czy na pewno chcesz zgłosić do modyfikacji</value>
+  </data>
+  <data name="ModerationList" xml:space="preserve">
+    <value>Ogłoszenia do modyfikacji</value>
+  </data>
+  <data name="ModerationMsg" xml:space="preserve">
+    <value>Modyfikacja</value>
+  </data>
+  <data name="Mono" xml:space="preserve">
+    <value>Mono</value>
+  </data>
+  <data name="MsgSent" xml:space="preserve">
+    <value>Wiadomość wysłana</value>
+  </data>
+  <data name="MyAdds" xml:space="preserve">
+    <value>Moje ogłoszenia</value>
+  </data>
+  <data name="MyPagination" xml:space="preserve">
+    <value>Moje stronicowanie</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="Not" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>Lub</value>
+  </data>
+  <data name="PageViews" xml:space="preserve">
+    <value>Wyświetlenia</value>
+  </data>
+  <data name="ParentcategoryID" xml:space="preserve">
+    <value>ID rodzica kategorii</value>
+  </data>
+  <data name="Pets" xml:space="preserve">
+    <value>Zwierzęta</value>
+  </data>
+  <data name="PetsText" xml:space="preserve">
+    <value>Pomóżmy naszym małym przyjaciołom znaleźć nowy dom!</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="ProfileChngPsswd" xml:space="preserve">
+    <value>Zmień hasło</value>
+  </data>
+  <data name="ProfileShow" xml:space="preserve">
+    <value>Pokaż profil</value>
+  </data>
+  <data name="ProfileTitle" xml:space="preserve">
+    <value>Mój profil</value>
+  </data>
+  <data name="Psswd" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="PsswdChanged" xml:space="preserve">
+    <value>Twoje hasło zostało zmienione</value>
+  </data>
+  <data name="PsswdConfirm" xml:space="preserve">
+    <value>Potwierdź hasło</value>
+  </data>
+  <data name="PsswdNew" xml:space="preserve">
+    <value>Nowe hasło</value>
+  </data>
+  <data name="PsswdOld" xml:space="preserve">
+    <value>Stare hasło</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Opublikuj</value>
+  </data>
+  <data name="RealProperties" xml:space="preserve">
+    <value>Nieruchomości</value>
+  </data>
+  <data name="RealPropertiesText" xml:space="preserve">
+    <value>Sprawdź dostępne nieruchomości. Zakup? Sprzedaż? Apartament, czy dom?</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Zarejestruj</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="RemindPsswdMsg" xml:space="preserve">
+    <value>Wpisz swój login (adres e-mail), żeby otrzymać swoje hasło</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Zgłoś</value>
+  </data>
+  <data name="Royal" xml:space="preserve">
+    <value>Królewski</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Szukaj</value>
+  </data>
+  <data name="SearchBarHint" xml:space="preserve">
+    <value>WYSZUKAJ...</value>
+  </data>
+  <data name="SearchMsg" xml:space="preserve">
+    <value>Wyniki wyszukiwania</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="SendToModeration" xml:space="preserve">
+    <value>Wyślij do modyfikacji</value>
+  </data>
+  <data name="SportsNHobby" xml:space="preserve">
+    <value>Sporty i hobby</value>
+  </data>
+  <data name="SportsNHobbyText" xml:space="preserve">
+    <value>Jesteś atletą, czy po prostu chcesz pograć z przyjaciółmi? To nie ma znaczenia. Tutaj mamy wszystko!</value>
+  </data>
+  <data name="Subcategory" xml:space="preserve">
+    <value>Podkategoria</value>
+  </data>
+  <data name="SubcategoryShow" xml:space="preserve">
+    <value>Pokaż podkategorię</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Zatwierdź</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Wsparcie</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Motyw</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Serwis ogłoszeń</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Użytkownik</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>UżytkownikID</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Użytkownicy</value>
+  </data>
+  <data name="UsersList" xml:space="preserve">
+    <value>Lista użytkowników</value>
+  </data>
+  <data name="UsersVerification" xml:space="preserve">
+    <value>Weryfikacja użytkowników</value>
+  </data>
+  <data name="Verification" xml:space="preserve">
+    <value>Weryfikacja</value>
+  </data>
+  <data name="WriteEmailHint" xml:space="preserve">
+    <value>Wpisz_swój_email</value>
+  </data>
+</root>

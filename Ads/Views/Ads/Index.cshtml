@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Ads.Models.Ad>
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.Ads;
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+
+<h2>@Ads.Resources.Texts.Ads</h2>
+@if (Convert.ToBoolean(Session["Admin"]) == true)
+{@Html.Partial("_AdminTabs")
+
+<p>
+    @Html.ActionLink(@Ads.Resources.Texts.CreateNew, "Create")
+</p>
+}
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.ActionLink(@Ads.Resources.Texts.Title, "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+
+        <th>
+            @Html.ActionLink(@Ads.Resources.Texts.DateOfCreation, "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th>
+            @Ads.Resources.Texts.User
+        </th>
+        <th>
+            @Ads.Resources.Texts.Category
+        </th>
+        @if (Convert.ToBoolean(Session["Admin"]) == true)
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.IsModerated)
+            </th>
+        }
+        else
+        {
+            <th>
+                @Ads.Resources.Texts.IsModerated
+            </th>
+        }
+
+        <th>
+            @Ads.Resources.Texts.Actions
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.OnePageOfAds)
+    {
+        <tr onclick="location.href = '@(Url.Action("ShowAd", "Ads", new { id = item.AdID, media = item.MediaPath }))'" role="button">
+
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.DateOfInsert
+
+            </td>
+            <td>
+                @item.User.Login
+            </td>
+            <td>
+                @item.Category.Name
+            </td>
+            <td>
+                @item.IsModerated
+            </td>
+
+            <td>
+                @if (Convert.ToBoolean(Session["Admin"]) == true)
+                {
+                    @Html.ActionLink(@Ads.Resources.Texts.Edit + " |", "Edit", new { id = item.AdID });
+                    @Html.ActionLink(" " + @Ads.Resources.Texts.Delete, "Delete", new { id = item.AdID })
+                }
+
+                else
+                {
+                    @Html.ActionLink(@Ads.Resources.Texts.SendToModeration, "SendToModeration", new { id = item.AdID })
+                }
+
+            </td>
+        </tr>
+    }
+
+    @Html.PagedListPager((IPagedList)ViewBag.OnePageOfAds, page => Url.Action("Index", new { page }))
+</table>
+
+@*////////*@
+
+
+

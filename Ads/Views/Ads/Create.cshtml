@@ -1,0 +1,133 @@
+﻿@model Ads.Models.Ad
+
+@{
+    ViewBag.Title = @Ads.Resources.Texts.AddAd;
+}
+
+<h2>@Ads.Resources.Texts.AddAd</h2>
+
+
+@using (Html.BeginForm("Create", "Ads", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, @Ads.Resources.Texts.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CategoryID, @Ads.Resources.Texts.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input value="@ViewBag.CategoryID" id="CategoryID" name="CategoryID" Readonly="true"/>
+            @*Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Content, @Ads.Resources.Texts.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MediaPath, @Ads.Resources.Texts.MediaPath, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="file" id="ImageUpload" />
+            <img id="imgpreview" src="#" />
+        </div>
+    </div>
+    
+        @for(int i=0;i<ViewBag.Attributes.Count;i++)
+        {
+
+            @ViewBag.Attributes[i].Name <input type="text" name="aaa[@i]"/>
+
+        }
+    
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value=@Ads.Resources.Texts.Create class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink(@Ads.Resources.Texts.BackToList, "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        
+
+
+        var categories = '@(ViewBag.Categories)';
+        var attributes = '@(ViewBag.Attributes)';
+        var listOfAttributes = new List();
+        function addAtributes() {
+            var e = document.getElementById("categoryAttribute");
+            var str = e.text;
+            for (i = 0; i < categories.length; i++) {
+                if (categories.includes(categories[i].Name)) {
+                    for (j = 0; j < attributes.length; j++) {
+                        for (m = 0; m < attributes[j].length; m++) {
+                            if (attributes[j].Category[m].Name == categories[i].Name) {
+                                listOfAttributes.add(attributes[j].Name);
+                            }
+
+                        }
+                    }
+                }
+            }
+            var count = 8;//tu powinno byc count listofAttributes ale i tak niedziała i tak nie działa więc elo
+            var division = document.createElement('DIV');
+            for (p = 0; p < count; p++) {
+            division.innerHTML = DynamictextBox("");
+            
+                 document.getElementById("categoryAttribute").appendChild(division);
+            }
+        }
+        function DynamictextBox(value) {
+            return '<div><input type="text" name="dyntxt" /></div>';
+        }
+
+
+
+        $(function () {
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $("img#imgpreview")
+                            .attr("src", e.target.result)
+                            .width(200)
+                            .height(200);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+
+                }
+            }
+
+            $("$ImageUpload").change(function () {
+                readURL(this);
+            });
+
+        });
+    </script>
+}
